@@ -1,5 +1,6 @@
-import { useState } from 'react'
-import bookLogo from './assets/books.png'
+import React from 'react';
+import { useState } from 'react';
+import bookLogo from './assets/books.png';
 
 function App() {
   const [token, setToken] = useState(null)
@@ -7,6 +8,7 @@ function App() {
   return (
     <>
       <h1><img id='logo-image' src={bookLogo}/>Library App</h1>
+      <p>test</p>
 
       <p>Complete the React components needed to allow users to browse a library catalog, check out books, review their account, and return books that they've finished reading.</p>
 

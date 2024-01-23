@@ -1,1 +1,8 @@
-/* TODO - add your code to create a functional React component that renders a login form */
+const Login = ({setEmail, setPassword}) => {
+
+    return (
+        <h1>hello you</h1>
+    )
+}
+
+export default Login;

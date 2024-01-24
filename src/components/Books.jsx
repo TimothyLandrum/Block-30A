@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import SingleBook from "./SingleBook";
 
 const BASE_URL = 'https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api';
 
@@ -41,16 +42,13 @@ const Books = () => {
             <ul>
                 {books.map(book => (
                     <li key={book.id}>
-                        <h3>{book.title}</h3>
-                        <p>Author: {book.author}</p>
-                        <p>{book.description}</p>
-                        <img src={book.coverimage} alt={book.title} />
-                        <p>{book.available ? 'Available' : 'Checked Out'}</p>
+                        <SingleBook book={book} />
                     </li>
                 ))}
             </ul>
             {books.length === 0 && <p>No books available.</p>}
         </div>
+        
     );
 };
 

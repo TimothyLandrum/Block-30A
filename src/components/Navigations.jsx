@@ -8,13 +8,13 @@ const Navigations = ({ token }) => {
         <nav>
             <Link to='/Books'>Books</Link> |
             {token ? (
-                //link to pages for users who are logged in
+                //link to pages for users who are logged in (between the <> ... </>)
                 <>
                 
                 
                 </>
             ) : ( 
-                //link to pages for users who are not logged in below
+                //link to pages for users who are not logged in below (between the <> ... </>)
                 <>
                     <Link to='/register'>Register</Link> |
                     <Link to='/login'>Login</Link>  

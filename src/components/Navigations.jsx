@@ -9,7 +9,6 @@ const Navigations = ({ isLoggedIn }) => {
       <ul>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/books">Books</Link></li>
-        {/* Add other navigation items as needed */}
         {!isLoggedIn && <li><Link to="/login">Login</Link></li>}
         {!isLoggedIn && <li><Link to="/register">Register</Link></li>}
         {isLoggedIn && <li><Link to="/account">Account</Link></li>}

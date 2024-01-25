@@ -26,7 +26,6 @@ const App = () => {
           <Route path="/account" component={Account} />
           <Route path="/reservations" component={Reservations} />
           <Route path="/books/:bookId" component={SingleBook} />
-          {/* Additional routes for other views */}
         </Switch>
       </div>
     </Router>

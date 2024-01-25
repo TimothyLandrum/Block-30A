@@ -26,11 +26,10 @@ const Account = () => {
       .then(response => response.json())
       .then(result => {
         console.log(result);
-        // Handle the result as needed
       })
       .catch(error => {
         console.error(error);
-        // Handle errors if any
+
       });
   };
 

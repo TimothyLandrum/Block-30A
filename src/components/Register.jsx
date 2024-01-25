@@ -1,4 +1,3 @@
-/* TODO - add your code to create a functional React component that renders a registration form */
 
 import React, { useState } from 'react';
 
@@ -26,11 +25,9 @@ const Register = () => {
       .then(response => response.json())
       .then(result => {
         console.log(result);
-        // Handle the result as needed, e.g., store user information in state or localStorage
       })
       .catch(error => {
         console.error(error);
-        // Handle errors if any
       });
   };
 

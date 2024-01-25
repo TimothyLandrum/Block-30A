@@ -8,8 +8,8 @@ import Books from './components/Books';
 import Navigations from './components/Navigations';
 
 
-const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Default to logged off
+function App() {
+  const [token, setToken] = useState(null)
 
   return (
     <>

@@ -1,49 +1,21 @@
+/* TODO - add your code to create a functional React component that renders details for a single book. Fetch the book data from the provided API. You may consider conditionally rendering a 'Checkout' button for logged in users. */
 
-import React, { useState, useEffect } from 'react';
+import React from "react";
 
-const SingleBook = ({ match }) => {
-  const [book, setBook] = useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Set this state based on user authentication status
+const SingleBook = ({ book }) => {
 
-  useEffect(() => {
-    fetch(`/api/books/${match.params.bookId}`, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then(response => response.json())
-      .then(result => {
-        setBook(result);
-      })
-      .catch(error => {
-        console.error(error);
-      });
+    const {title, author, description, coverimage, available } = book;
 
-    setIsLoggedIn(true);
-  }, [match.params.bookId]);
+    return (
+        <div className='single-book'>
+            <h2>{title}</h2>
+            <p>Author: {author}</p>
+            <p>{description}</p>
+            <img src={coverimage} alt={`Cover of ${title}`} />
+            <p>{available ? 'Available' : 'Checked Out'}</p>
+        </div>
 
-  const handleCheckout = () => {
-  };
-
-  return (
-    <div>
-      {book ? (
-        <>
-          <h1>{book.title}</h1>
-          <p>Author: {book.author}</p>
-          <p>Description: {book.description}</p>
-          <img src={book.coverimage} alt={book.title} style={{ maxWidth: '300px' }} />
-          {isLoggedIn && (
-            <button type="button" onClick={handleCheckout}>
-              Checkout
-            </button>
-          )}
-        </>
-      ) : (
-        <p>Loading...</p>
-      )}
-    </div>
-  );
+    );
 };
 
 export default SingleBook;

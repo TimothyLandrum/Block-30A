@@ -17,7 +17,7 @@ const Books = () => {
 
     return (
         <div>
-            <h2>Books</h2>
+            <h2>All Books</h2>
             <ul>
                 {booksList.map(book => (
                         <SingleBook key={book.id} book={book} />

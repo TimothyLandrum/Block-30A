@@ -1,7 +1,7 @@
 const Login = ({setEmail, setPassword}) => {
 
     return (
-        <h1>hello you</h1>
+        <h2>Hello You!</h2>
     )
 }
 

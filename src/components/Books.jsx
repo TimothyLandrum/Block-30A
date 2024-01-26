@@ -38,12 +38,12 @@ const Books = () => {
     if (error) return <div>Error: {error}</div>;
     return (
         <div>
-            <h2>Books</h2>
+            <h2>All Books</h2>
             <ul>
                 {books.map(book => (
-                    <li key={book.id}>
+                    <p key={book.id}>
                         <SingleBook book={book} />
-                    </li>
+                    </p>
                 ))}
             </ul>
             {books.length === 0 && <p>No books available.</p>}

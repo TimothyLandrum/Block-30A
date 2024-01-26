@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Navigations = ({ token }) => {
     return (
         <nav>
-            <Link to='/Books'>Books</Link> |
+            |<Link to='/Books'>Books</Link> |   
             {token ? (
                 //link to pages for users who are logged in (between the <> ... </>)
                 <>

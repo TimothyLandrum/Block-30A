@@ -1,52 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import SingleBook from "./SingleBook";
-
-const BASE_URL = 'https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api';
-
-const fetchBooks = async () => {
-    try {
-        const response = await fetch(`${BASE_URL}/books`, {
-            headers: { 'Content-Type': 'application/json' },
-        });
-        if (!response.ok) throw new Error('Network response issue');
-        const data = await response.json();
-        return data.books;
-    } catch (error) {
-        console.error('Error fetching books:', error);
-        throw error;
-    }
-};
+import { useDispatch, useSelector } from "react-redux";
+import { fetchBooks } from "../features/books/bookSlice";
 
 const Books = () => {
-    const [books, setBooks] = useState([]);
-    const [error, setError] = useState(null);
+    const dispatch = useDispatch();
+    const { booksList, loading, error } = useSelector((state) => state.books);
+
 
     useEffect(() => {
-        const getBooks = async () => {
-            try {
-                const fetchedBooks = await fetchBooks();
-                setBooks(fetchedBooks);
-            } catch (error) {
-                setError(error.message);
-            }
-        }
+        dispatch(fetchBooks());
+    }, [dispatch]);
 
-        getBooks();
-    }, []);
-
-
+    if (loading) return <div>Loading...</div>;
     if (error) return <div>Error: {error}</div>;
+
     return (
         <div>
             <h2>All Books</h2>
             <ul>
-                {books.map(book => (
-                    <p key={book.id}>
-                        <SingleBook book={book} />
-                    </p>
+                {booksList.map(book => (
+                        <SingleBook key={book.id} book={book} />
                 ))}
             </ul>
-            {books.length === 0 && <p>No books available.</p>}
         </div>
         
     );

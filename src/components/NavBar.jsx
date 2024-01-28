@@ -20,7 +20,7 @@ const pages = ["Books"];
 const settings = [ "Account", "Logout"];
 const authPages = ["Register", "Login"];
 
-function NavBar({token}) {
+function NavBar({token, setToken}) {
     console.log(token);
   const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = useState(null);

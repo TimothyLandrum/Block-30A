@@ -78,7 +78,7 @@ const Register = ({ setToken }) => {
       );
       const result = await response.json();
       console.log(result);
-      setToken(result.token);
+      setToken(result.token, result.user);
     } catch (error) {
       setError(error.message);
     }

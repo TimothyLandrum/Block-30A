@@ -132,7 +132,18 @@ function NavBar() {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                <MenuItem key={setting} onClick={() => {
+                handleCloseUserMenu();
+                if (setting === 'Logout') {
+                  localStorage.removeItem('token');
+                  navigate('/login');
+
+                } else {
+                  navigate(`/${setting.toLowerCase()}`);
+                }
+              }}>
+                
+                  
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}

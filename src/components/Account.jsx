@@ -1,5 +1,6 @@
 
 
+
 /*
 import React, { useEffect, useState } from 'react';
 
@@ -124,10 +125,13 @@ function Account({ token, userInfo, setUserInfo }) {
     return (
         <div>
             <h2>Account Information</h2>
+
             <p>Name: {userInfo.firstname} {userInfo.lastname}</p>
             <p>Email: {userInfo.email}</p>
+
         </div>
     );
 };
+
 
 export default Account;

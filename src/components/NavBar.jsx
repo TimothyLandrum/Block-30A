@@ -15,8 +15,8 @@ import AdbIcon from "@mui/icons-material/Adb";
 import bookLogo from "../assets/books.png";
 import { useNavigate } from "react-router-dom";
 
-const pages = ["Register", "Login", "Books"];
-const settings = ["Profile", "Account", "Logout"];
+const pages = ["Books", "Login", "Register"];
+const settings = [ "Account", "Logout"];
 
 function NavBar() {
   const navigate = useNavigate();
@@ -42,7 +42,7 @@ function NavBar() {
     <AppBar
       position="static"
       sx={{
-        bgcolor: "secondary.main",
+        background: "linear-gradient(#e61ead, #3e0a41);",
       }}
     >
       <Container maxWidth="xl">
@@ -112,7 +112,7 @@ function NavBar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" />
+                <Avatar />
               </IconButton>
             </Tooltip>
             <Menu
@@ -132,6 +132,7 @@ function NavBar() {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
+
                 <MenuItem key={setting} onClick={() => {
                 handleCloseUserMenu();
                 if (setting === 'Logout') {
@@ -143,7 +144,6 @@ function NavBar() {
                 }
               }}>
                 
-                  
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}

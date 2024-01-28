@@ -7,6 +7,8 @@ import Books from './components/Books';
 import NavBar from './components/NavBar';
 import Account from './components/Account'
 import SingleBook from './components/SingleBook';
+import './App.css'
+
 
 function App() {
   const [token, setToken] = useState(null);
@@ -27,6 +29,7 @@ function App() {
 
       <Routes>
         <Route path='/register' element={<Register setToken={setToken} />} />
+        <Route path='/account' element={<Account setToken={setToken} />} />
         <Route path='/login' element={<Login setToken={setToken} />} />
         <Route path='/Books' element={<Books />} />
         <Route path='/books/:id' element={<SingleBook />} />

@@ -11,7 +11,8 @@ import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { createTheme } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
 
 function Copyright(props) {
   return (
@@ -37,6 +38,7 @@ const Login = ({ setToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -62,7 +64,7 @@ const Login = ({ setToken }) => {
       console.log('Token receive in Login component:', result.token);
       setToken(result.token);
     } catch (error) {
-      setError(error.message);
+      setError('incorrect email or password');
     }
   }
 
@@ -123,12 +125,9 @@ const Login = ({ setToken }) => {
           </Button>
           <Grid container>
             <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
             </Grid>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="#" onClick={() => {navigate(`/Register`)}} variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>

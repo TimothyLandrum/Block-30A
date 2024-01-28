@@ -10,6 +10,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useNavigate } from "react-router-dom";
 
 
   
@@ -39,6 +40,7 @@ const Register = ({ setToken }) => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [validationError, setValidationError] = useState("");
+  const navigate = useNavigate();
 
   const validateForm = () => {
     if (password.length < 8) {
@@ -164,13 +166,13 @@ const Register = ({ setToken }) => {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 3, mb: 2, bgcolor: 'secondary.main' }}
             >
               Sign Up
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href='#' onClick={() => {navigate(`/Login`)}} variant="body2">
                   Already have an account? Sign in
                 </Link>
               </Grid>

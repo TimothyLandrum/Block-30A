@@ -6,6 +6,7 @@ import Register from './components/Register';
 import Login from './components/Login';
 import Books from './components/Books';
 import Navigations from './components/Navigations';
+import Account from './components/Account';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Navigations token={token} />
       <Routes>
         <Route path='/register' element={<Register setToken={setToken} />} />
+        <Route path='/account' element={<Account setToken={setToken} />} />
         <Route path='/login' element={<Login setToken={setToken} />} />
         <Route path='/Books' element={<Books />} />
       </Routes>

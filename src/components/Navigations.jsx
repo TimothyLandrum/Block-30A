@@ -7,6 +7,7 @@ const Navigations = ({ token }) => {
     return (
         <nav>
             |<Link to='/Books'>Books</Link> |   
+             <Link to='/Account'>Account</Link> |
             {token ? (
                 //link to pages for users who are logged in (between the <> ... </>)
                 <>

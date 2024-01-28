@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import SingleBook from "./SingleBook";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBooks } from "../features/books/bookSlice";
+import { Box } from '@mui/material';
 
 const Books = () => {
     const dispatch = useDispatch();
@@ -17,12 +18,14 @@ const Books = () => {
 
     return (
         <div>
-            <h2>All Books</h2>
+            <h2>Book Selection</h2>
+            <div >
             <ul>
                 {booksList.map(book => (
                         <SingleBook key={book.id} book={book} />
                 ))}
             </ul>
+            </div>
         </div>
         
     );

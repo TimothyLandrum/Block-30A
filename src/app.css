@@ -1,0 +1,43 @@
+/* App Component Styles */
+body {
+    font-family: Georgia, serif;
+    background-color: #faf9f864;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  #logo-image {
+    width: 30px;
+    margin-right: 10px;
+  }
+  
+  /* Books Component Styles */
+  h2 {
+    text-align: center;
+    font-size: 45px;
+    margin-left: 550px;
+    margin-right: 500px;
+    font-size: 72px;
+    background: linear-gradient(#e61ead, #3e0a41);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+
+  .books:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 0px 100px;
+  }
+  
+  /* Register Component Styles */
+  
+
+  
+  /* SingleBook Component Styles */
+  
+  
+  /* Add your own custom styles here */

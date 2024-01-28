@@ -1,21 +1,81 @@
-/* TODO - add your code to create a functional React component that renders details for a single book. Fetch the book data from the provided API. You may consider conditionally rendering a 'Checkout' button for logged in users. */
+import CardHeader from '@mui/material/CardHeader';
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
+import Collapse from '@mui/material/Collapse';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { styled } from '@mui/material/styles';
+import { useState } from 'react';
+import { Divider, Button } from '@mui/material';
 
-import React from "react";
+const ExpandMore = styled((props) => {
+  const { expand, ...other } = props;
+  return <IconButton {...other} />;
+})(({ theme, expand }) => ({
+  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
+  marginLeft: 'auto',
+  transition: theme.transitions.create('transform', {
+    duration: theme.transitions.duration.shortest,
+  }),
+}));
 
 const SingleBook = ({ book }) => {
 
     const {title, author, description, coverimage, available } = book;
 
-    return (
-        <div className='single-book'>
-            <h2>{title}</h2>
-            <p>Author: {author}</p>
-            <p>{description}</p>
-            <img src={coverimage} alt={`Cover of ${title}`} />
-            <p>{available ? 'Available' : 'Checked Out'}</p>
-        </div>
+  const [expanded, setExpanded] = useState(false);
 
-    );
-};
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
 
+  return (
+    <Card className='books' sx={{ maxWidth: 345, margin: '10px', bgcolor: 'DimGrey', boxShadow: '1px 1px 20px', borderStyle: 'solid',  }}>
+              <CardHeader 
+        title={title} sx={{
+            textAlign: 'center', color: 'white'
+        }}
+      />
+      <CardMedia sx={{borderStyle: 'double'}}
+        component="img"
+        height="194"
+        image={coverimage}
+        alt={`Cover of ${coverimage}`}
+      />
+      <CardContent>
+        <Typography variant="body2" color="white">
+        {available ? 'Available' : 'Checked Out'}
+        </Typography>
+      </CardContent>
+      <Divider sx={{color: 'white'}} />
+      <CardActions disableSpacing>
+      <Button variant='contained' color='secondary'>Checkout</Button>
+        <ExpandMore
+          expand={expanded}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon sx={{
+            color: 'white'
+          }} />
+        </ExpandMore>
+      </CardActions>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <CardContent>
+        <Typography sx={{color: 'white'}}>Author: {author} </Typography>
+        <Divider />
+          <Typography sx={{
+            marginTop: '20px', color: 'white'
+          }} >
+            {description}
+          </Typography>
+        </CardContent>
+      </Collapse>
+    </Card>
+  );
+}
 export default SingleBook;

@@ -1,26 +1,27 @@
 import React from 'react';
 import { useState } from 'react'
-import bookLogo from './assets/books.png'
-import { Routes, Route, Link } from 'react-router-dom';
 import Register from './components/Register';
 import Login from './components/Login';
+import { Routes, Route, Link } from 'react-router-dom';
 import Books from './components/Books';
-import Navigations from './components/Navigations';
+import NavBar from './components/NavBar';
 import Account from './components/Account';
-
+import './App.css'
 
 function App() {
-  const [token, setToken] = useState(null)
+  const [token, setToken] = useState(null);
+
 
   return (
     <>
-      <h1><img id='logo-image' src={bookLogo}/>Library App</h1>
-      <Navigations token={token} />
+    <NavBar />
+
       <Routes>
         <Route path='/register' element={<Register setToken={setToken} />} />
         <Route path='/account' element={<Account setToken={setToken} />} />
         <Route path='/login' element={<Login setToken={setToken} />} />
-        <Route path='/Books' element={<Books />} />
+        <Route path='/Books' element={<div ><Books /></div>} />
+        <Route path='/Account' element={<Account />} />
       </Routes>
     </>
   )

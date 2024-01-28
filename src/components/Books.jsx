@@ -20,7 +20,7 @@ const Books = () => {
         <div>
             <h2>Book Selection</h2>
             <div >
-            <ul>
+            <ul className='books-container'>
                 {booksList.map(book => (
                         <SingleBook key={book.id} book={book} />
                 ))}

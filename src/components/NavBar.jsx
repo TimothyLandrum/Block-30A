@@ -14,11 +14,14 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import bookLogo from "../assets/books.png";
 import { useNavigate } from "react-router-dom";
+import  Navigations  from './Navigations'
 
-const pages = ["Books", "Login", "Register"];
+const pages = ["Books"];
 const settings = [ "Account", "Logout"];
+const authPages = ["Register", "Login"];
 
-function NavBar() {
+function NavBar({token}) {
+    console.log(token);
   const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
@@ -67,36 +70,8 @@ function NavBar() {
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
+          <Navigations token={token} />
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            Library Express
-          </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
@@ -107,6 +82,17 @@ function NavBar() {
                 {page}
               </Button>
             ))}
+            {!token && (
+                authPages.map((page) => (
+                    <Button
+                      key={page}
+                      onClick={() => {navigate(`/${page.toLowerCase()}`)}}
+                      sx={{ my: 2, color: "white", display: "block" }}
+                    >
+                      {page}
+                    </Button>
+                  ))
+            )}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>

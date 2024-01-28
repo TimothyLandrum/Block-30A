@@ -14,13 +14,13 @@ function App() {
 
   return (
     <>
-    <NavBar />
+    <NavBar token={token}/>
 
       <Routes>
         <Route path='/register' element={<Register setToken={setToken} />} />
         <Route path='/login' element={<Login setToken={setToken} />} />
-        <Route path='/Books' element={<div ><Books /></div>} />
-        <Route path='/Account' element={<Account />} />
+        <Route path='/books' element={<div ><Books /></div>} />
+        <Route path='/account' element={<Account />} />
       </Routes>
     </>
   )

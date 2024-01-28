@@ -1,4 +1,5 @@
 /* App Component Styles */
+
 body {
     font-family: Georgia, serif;
     background-color: #faf9f864;
@@ -33,6 +34,16 @@ body {
     box-shadow: 0px 0px 100px;
   }
   
+  .books-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .books-container>* {
+    width: 20rem;
+  }
   /* Register Component Styles */
   
 

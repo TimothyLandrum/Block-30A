@@ -61,7 +61,7 @@ const Login = ({ setToken }) => {
         }
       );
       const result = await response.json();
-      console.log(result);
+      console.log('Token receive in Login component:', result.token);
       setToken(result.token);
     } catch (error) {
       setError('incorrect email or password');

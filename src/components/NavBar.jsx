@@ -64,7 +64,7 @@ function NavBar({token, setToken}) {
               textDecoration: "none",
             }}
           >
-            Library Express
+            Book Buddy
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>

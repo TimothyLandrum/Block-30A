@@ -10,6 +10,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { styled } from '@mui/material/styles';
 import { useState } from 'react';
 import { Divider, Button } from '@mui/material';
+import CheckoutBook from './bookCheckout';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -52,7 +53,7 @@ const SingleBook = ({ book }) => {
       </CardContent>
       <Divider sx={{color: 'white'}} />
       <CardActions disableSpacing>
-      <Button variant='contained' color='secondary'>Checkout</Button>
+      <CheckoutBook />
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}

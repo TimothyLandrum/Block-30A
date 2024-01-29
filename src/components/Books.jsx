@@ -30,7 +30,7 @@ const Books = () => {
 
     return (
         <div>
-            <h2>Book Selection</h2>
+            <h2 className="books-header">Book Selection</h2>
             <div >
             <ul className='books-container'>
                 {booksList.map(book => (

@@ -1,54 +1,70 @@
 /* App Component Styles */
 
 body {
-    font-family: Georgia, serif;
-    background-color: #faf9f864;
-    margin: 0;
-    padding: 0;
-  }
-  
-  h1 {
-    color: #333;
-  }
-  
-  #logo-image {
-    width: 30px;
-    margin-right: 10px;
-  }
-  
-  /* Books Component Styles */
-  h2 {
-    text-align: center;
-    font-size: 45px;
-    margin-left: 550px;
-    margin-right: 500px;
-    font-size: 72px;
-    background: linear-gradient(#e61ead, #3e0a41);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
+  font-family: Georgia, serif;
+  background-color: #faf9f864;
+  margin: 0;
+  padding: 0;
+}
 
-  .books:hover {
-    transform: scale(1.02);
-    box-shadow: 0px 0px 100px;
-  }
-  
-  .books-container {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    justify-content: center;
-  }
+h1 {
+  color: #333;
+}
 
-  .books-container>* {
-    width: 20rem;
-  }
-  /* Register Component Styles */
-  
+#logo-image {
+  width: 30px;
+  margin-right: 10px;
+}
 
-  
-  /* SingleBook Component Styles */
-  
-  
-  /* Add your own custom styles here */
+/* Books Component Styles */
+.books-header {
+  text-align: center;
+  font-size: 45px;
+  margin-left: 550px;
+  margin-right: 500px;
+  background: linear-gradient(#e61ead, #3e0a41);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.books:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 0px 100px;
+}
+
+.books-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.books-container > * {
+  width: 20rem;
+}
+.account {
+  text-align: center;
+}
+
+.account-header {
+  font-size: 40px;
+  background: linear-gradient(#e61ead, #3e0a41);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.account > div {
+  border: 8px #e61ead outset;
+  margin-left: 400px;
+  margin-right: 400px;
+}
+
+.account > div > p {
+  font-size: 20px;
+  border: 2px;
+}
+/* Register Component Styles */
+
+/* SingleBook Component Styles */
+
+/* Add your own custom styles here */

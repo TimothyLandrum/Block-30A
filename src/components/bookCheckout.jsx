@@ -1,5 +1,6 @@
 import React from 'react';
-import { userSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { Button } from '@mui/material';
 
 const CheckoutBook = ({ bookId }) => {
 
@@ -8,13 +9,15 @@ const CheckoutBook = ({ bookId }) => {
     const handleCheckout = async () => {
         if(!isAuthenticated) {
             return;
+        } else {
+            handleCheckout();
         }
-    };
+    }
 
     return (
         <div>
             {isAuthenticated ? (
-                <button onClick={handleCheckout}>Checkout</button>
+                <Button variant='contained' color='secondary' onClick={handleCheckout}>Checkout</Button>
             ) : (
                 <p>Please log in to checkout books.</p>
             )}

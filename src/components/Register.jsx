@@ -34,8 +34,8 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 const Register = ({ setToken }) => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [firstname, setFirstName] = useState("");
+  const [lastname, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
@@ -71,8 +71,8 @@ const Register = ({ setToken }) => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            firstName,
-            lastName,
+            firstname,
+            lastname,
             email,
             password,
           }),
@@ -112,12 +112,12 @@ const Register = ({ setToken }) => {
                 <TextField
                   optional='true'
                   autoComplete="given-name"
-                  name="firstName"
+                  name="firstname"
                   fullWidth
-                  id="firstName"
+                  id="firstname"
                   label="First Name (optional)"
                   autoFocus
-                  value={firstName}
+                  value={firstname}
                   onChange={(e) => setFirstName(e.target.value)}
                 />
               </Grid>
@@ -125,11 +125,11 @@ const Register = ({ setToken }) => {
                 <TextField
                   fullWidth
                   optional='true'
-                  id="lastName"
+                  id="lastname"
                   label="Last Name (optional)"
-                  name="lastName"
+                  name="lastname"
                   autoComplete="family-name"
-                  value={lastName}
+                  value={lastname}
                   onChange={(e) => setLastName(e.target.value)}
                 />
               </Grid>

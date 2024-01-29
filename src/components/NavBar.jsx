@@ -5,16 +5,14 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import bookLogo from "../assets/books.png";
 import { useNavigate } from "react-router-dom";
-import  Navigations  from './Navigations'
+
 
 const pages = ["Books"];
 const settings = [ "Account", "Logout"];
@@ -70,7 +68,6 @@ function NavBar({token, setToken}) {
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-          <Navigations token={token} />
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
@@ -122,7 +119,7 @@ function NavBar({token, setToken}) {
                 <MenuItem key={setting} onClick={() => {
                 handleCloseUserMenu();
                 if (setting === 'Logout') {
-                  localStorage.removeItem('token');
+                  setToken('');
                   navigate('/login');
 
                 } else {

@@ -7,7 +7,7 @@ import Books from './components/Books';
 import NavBar from './components/NavBar';
 import Account from './components/Account'
 import SingleBook from './components/SingleBook';
-import './App.css'
+import './app.css'
 
 
 function App() {
